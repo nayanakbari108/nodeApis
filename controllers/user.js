@@ -19,6 +19,26 @@ export const findUserById=async(req,res)=>{
     user
   })
 }
+export const updateUserById=async(req,res)=>{
+  const {id}= req.params;
+  // const user=await User.findOne({_id:id})
+  const user=await User.findById(id)
+
+  res.json({
+    success:true,
+    message:"updated"
+  })
+}
+export const deleteUserById=async(req,res)=>{
+  const {id}= req.params;
+  // const user=await User.findOne({_id:id})
+  const user=await User.findById(id)
+
+  res.json({
+    success:true,
+    message:"deleted"
+  })
+}
 
 export const createNewUser=async(req,res)=>{
 
